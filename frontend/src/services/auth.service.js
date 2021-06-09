@@ -4,7 +4,7 @@ import authHeader from './auth-header';
 class AuthService {
     login(user) {
         return axios
-            .post(VUE_APP_ENV_URL + '/auth/' + 'signin', {
+            .post(process.env.VUE_APP_ENV_URL + '/auth/' + 'signin', {
                 email: user.email,
                 password: user.password
             })
@@ -23,7 +23,7 @@ class AuthService {
     }
 
     register(user) {
-        return axios.post(VUE_APP_ENV_URL + '/auth/' + 'signup', {
+        return axios.post(process.env.VUE_APP_ENV_URL + '/auth/' + 'signup', {
             firstname: user.firstname,
             lastname: user.lastname,
             email: user.email,
@@ -32,14 +32,14 @@ class AuthService {
     }
 
     updateName(id, user) {
-        return axios.put(VUE_APP_ENV_URL + '/auth/'+ 'signupdate/' + id, {
+        return axios.put(process.env.VUE_APP_ENV_URL + '/auth/'+ 'signupdate/' + id, {
             firstname: user.firstname,
             lastname: user.lastname,
         }, { headers: authHeader() });
     }
 
     deleteUser(id) {
-        return axios.delete(API_URL + id, { headers: authHeader() });
+        return axios.delete(process.env.VUE_APP_ENV_URL + '/auth/' + id, { headers: authHeader() });
     }
 }
 
