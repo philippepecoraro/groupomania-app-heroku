@@ -1,12 +1,10 @@
 import axios from 'axios';
 import authHeader from './auth-header';
 
-const API_URL = 'http://localhost:3000/api/auth/';
-
 class AuthService {
     login(user) {
         return axios
-            .post(API_URL + 'signin', {
+            .post(VUE_APP_ENV_URL + '/auth/' + 'signin', {
                 email: user.email,
                 password: user.password
             })
@@ -25,7 +23,7 @@ class AuthService {
     }
 
     register(user) {
-        return axios.post(API_URL + 'signup', {
+        return axios.post(VUE_APP_ENV_URL + '/auth/' + 'signup', {
             firstname: user.firstname,
             lastname: user.lastname,
             email: user.email,
@@ -34,7 +32,7 @@ class AuthService {
     }
 
     updateName(id, user) {
-        return axios.put(API_URL + 'signupdate/' + id, {
+        return axios.put(VUE_APP_ENV_URL + '/auth/'+ 'signupdate/' + id, {
             firstname: user.firstname,
             lastname: user.lastname,
         }, { headers: authHeader() });
