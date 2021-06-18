@@ -29,11 +29,10 @@ const productionConnect = {
 };
 
 if (process.env.NODE_ENV === 'production') {
-    dbConfig = developConnect;
+    dbConfig = productionConnect;     
 }
 else {
-    
-    dbConfig = productionConnect;
+    dbConfig = developConnect;    
 }
 
 module.exports = dbConfig;
