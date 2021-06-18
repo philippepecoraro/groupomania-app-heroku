@@ -1,17 +1,22 @@
-const dbConfig = require("../config/db.config.js");
+const dbConfig  = require("../config/db.config.js");
+console.log("dbConfig:" + dbConfig);
 const Sequelize = require("sequelize");
-const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
-    host: dbConfig.HOST,
-    dialect: dbConfig.dialect,
-    operatorsAliases: 0,
 
-    pool: {
-        max: dbConfig.pool.max,
-        min: dbConfig.pool.min,
-        acquire: dbConfig.pool.acquire,
-        idle: dbConfig.pool.idle
-    }
-});
+    const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
+        host: dbConfig.HOST,
+        dialect: dbConfig.dialect,
+        operatorsAliases: 0,
+    
+        pool: {
+            max: dbConfig.pool.max,
+            min: dbConfig.pool.min,
+            acquire: dbConfig.pool.acquire,
+            idle: dbConfig.pool.idle
+        }
+    });
+console.log("dbConfig.DB:" + dbConfig.DB);
+console.log("dbConfig.USER:" + dbConfig.USER);
+
 const groupomania = {};
 
 groupomania.Sequelize = Sequelize;
