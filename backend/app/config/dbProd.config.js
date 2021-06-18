@@ -1,4 +1,4 @@
-
+require('dotenv').config();
 module.exports = {
     HOST: "eu-cdbr-west-01.cleardb.com",
     USER: "ba2afdc92fb2f4",
