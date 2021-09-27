@@ -1,7 +1,15 @@
 <template>
   <div class="container">
   <div class="col-md-12">
-    <h1 class="text-center">Rentrez vos identifiants</h1>
+    <div class="text-center">
+    <h1>Page de connexion</h1>
+      <div class="titleText">Rentrez vos identifiants <br />
+        Ou <br />
+         <router-link to="register">
+          Inscrivez-vous
+        </router-link>
+      </div>
+    </div>
     <div class="card card-container">    
       <form name="form" @submit.prevent="handleLogin">
         <div class="form-group">
@@ -94,6 +102,15 @@ export default {
 </script>
 
 <style scoped>
+
+.titleText {
+  font-size: 1.5rem;
+}
+
+a {
+  color: #212529;
+}
+
 label {
   display: block;
   margin-top: 10px;
